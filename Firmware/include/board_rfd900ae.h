@@ -28,7 +28,7 @@
 //
 //
 ///
-/// @file	board_rfd900a.h
+/// @file	board_rfd900ae.h
 ///
 /// Board-specific definitions and documentation for the RFD900A,
 /// Version 1.2 onwards.
@@ -59,17 +59,18 @@
 /// it is a flow control input to the SiK radio firmware.
 
 
-#ifndef _BOARD_RFD900A
-#define _BOARD_RFD900A
-
-#include <compiler_defs.h>
-#include <Si1000_defs.h>
+#ifndef _BOARD_RFD900AE
+#define _BOARD_RFD900AE
 
 #define BOARD_ID	  0x43
 #define BOARD_NAME	"RFD900A"
+#define INCLUDE_AES
 
 #define BOARD_MINTXPOWER 0		// Minimum transmit power level
 #define BOARD_MAXTXPOWER 30		// Maximum transmit power level
+
+#include <compiler_defs.h>
+#include <Si1000_defs.h>
 
 // GPIO definitions (not exported)
 SBIT(LED_RED,	   SFR_P1, 6);
@@ -130,4 +131,4 @@ SBIT(PA_ENABLE,    SFR_P2, 5);         // Power Amplifier Enable
 SBIT(IRQ,  SFR_P0, 7);                // Connection within RFD900 module, P0.7 is connected to nIRQ
 SBIT(NSS1, SFR_P1, 4);                // SI100x Internal Connection
 
-#endif // _BOARD_RFD900A
+#endif // _BOARD_RFD900AE

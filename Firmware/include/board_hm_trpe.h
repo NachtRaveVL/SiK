@@ -87,17 +87,18 @@
 /// to the Si1000 when it is jumpered low to force bootloader entry.
 ///
 
-#ifndef _BOARD_HM_TRP_H_
-#define _BOARD_HM_TRP_H_
-
-#include <compiler_defs.h>
-#include <Si1000_defs.h>
+#ifndef _BOARD_HM_TRPE_H_
+#define _BOARD_HM_TRPE_H_
 
 #define BOARD_ID	0x4e
 #define BOARD_NAME	"HM-TRP"
+#define INCLUDE_AES
 
 #define BOARD_MINTXPOWER 0		// Minimum transmit power level
 #define BOARD_MAXTXPOWER 20		// Maximum transmit power level
+
+#include <compiler_defs.h>
+#include <Si1000_defs.h>
 
 // GPIO definitions (not exported)
 SBIT(LED_RED,	   SFR_P1, 6);
@@ -154,4 +155,4 @@ SBIT(IRQ,  SFR_P0, 7);                  // Per board inspection
 SBIT(NSS1, SFR_P1, 4);                  // SI100x Internal Connection
 SBIT(SDN,  SFR_P2, 6);                  // XXX not actually the case on the HM-TRP... HRF set it this way on the RF50
 
-#endif // _BOARD_HM_TRP_H_
+#endif // _BOARD_HM_TRPE_H_

@@ -175,7 +175,29 @@ SFR (PCA0CPL4, 0xFD);                  // PCA0 Capture 4 Low
 SFR (PCA0CPH4, 0xFE);                  // PCA0 Capture 4 High
 SFR (VDM0CN, 0xFF);                    // VDD Monitor Control
 
-
+#ifdef INCLUDE_AES
+SFR(DMA0NCF, 0xC9);                   // DMA0 Configuration
+SFR(DMA0NBAL, 0xCA);                  // DMA0 Base Address Low (Selected Channel)
+SFR(DMA0NBAH, 0xCB);                  // DMA0 Base Address High (Selected Channel)
+SFR(DMA0NAOL, 0xCC);                  // DMA0 Address Offset Low (Selected Channel)
+SFR(DMA0NAOH, 0xCD);                  // DMA0 Address Offset High (Selected Channel)
+SFR(DMA0NSZL, 0xCE);                  // DMA0 Size Low (Selected Channel)
+SFR(DMA0NSZH, 0xCF);                  // DMA0 Size High (Selected Channel)
+SFR(DMA0SEL, 0xD1);                   // DMA0 Channel Select
+SFR(DMA0EN, 0xD2);                    // DMA0 Enable
+SFR(DMA0INT, 0xD3);                   // DMA0 Interrupt
+SFR(DMA0MINT, 0xD4);                  // DMA0 Middle Interrupt
+SFR(DMA0BUSY, 0xD5);                  // DMA0 Busy
+SFR(DMA0NMD, 0xD6);                   // DMA0 Mode (Selected Channel)
+SFR(AES0BCFG, 0xE9);                  // AES0 Block Configuration
+SFR(AES0DCFG, 0xEA);                  // AES0 Data Configuration
+SFR(AES0BIN, 0xEB);                   // AES0 Block Input
+SFR(AES0XIN, 0xEC);                   // AES0 XOR Input
+SFR(AES0KIN, 0xED);                   // AES0 Key Input
+SFR(AES0DBA, 0xEE);                   // AES0 Data Byte Address
+SFR(AES0KBA, 0xEF);                   // AES0 Key Byte Address
+SFR(AES0YOUT, 0xF5);                  // AES Y Out
+#endif
 
 //-----------------------------------------------------------------------------
 // 16-bit Register Definitions (might not be supported by all compilers)
@@ -381,6 +403,12 @@ SBIT (SPI0EN, SFR_SPI0CN, 0);          // SPI0 Enable
 #define INTERRUPT_RTC0_OSC_FAIL    17  // RTC0 (smaRTClock) Osc. Fail
 #define INTERRUPT_SPI1             18  // Serial Peripheral Interface 1
 
+#ifdef INCLUDE_AES
+#define INTERRUPT_DMA0             19  // Direct Memory Access 0
+#define INTERRUPT_ENC0             20  // Encoder/Decoder 0
+#define INTERRUPT_AES0             21  // Advanced Encryption Standard 0
+#endif
+
 //-----------------------------------------------------------------------------
 // SFR Page Definitions
 //-----------------------------------------------------------------------------
@@ -388,6 +416,12 @@ SBIT (SPI0EN, SFR_SPI0CN, 0);          // SPI0 Enable
 #define LEGACY_PAGE       0x00         // LEGACY SFR PAGE
 #define CRC0_PAGE         0x0F         // CRC0
 #define TOFF_PAGE         0x0F         // TEMPERATURE SENSOR OFFSET PAGE
+
+#ifdef INCLUDE_AES
+#define DPPE_PAGE         0x02         // DPPE SFR PAGE
+#define DMA0_PAGE         0x02         // DMA0 SFR PAGE
+#define AES0_PAGE         0x02         // AES0 SFR PAGE
+#endif
 
 //=============================================================================
 //

@@ -27,7 +27,7 @@
 //
 
 ///
-/// @file	board_rf50.h
+/// @file	board_rf50e.h
 ///
 /// Board-specific definitions for the RF50-DEMO board.
 ///
@@ -35,17 +35,18 @@
 /// @file	board.h
 ///		Board definitions for the HopeRF RF50 demo board
 
-#ifndef _BOARD_RF50_H
-#define _BOARD_RF50_H
-
-#include <compiler_defs.h>
-#include <Si1000_defs.h>
+#ifndef _BOARD_RF50E_H
+#define _BOARD_RF50E_H
 
 #define BOARD_ID	0x4d
 #define BOARD_NAME	"RF50_DEMO"
+#define INCLUDE_AES
 
 #define BOARD_MINTXPOWER 0		// Minimum transmit power level
 #define BOARD_MAXTXPOWER 20		// Maximum transmit power level
+
+#include <compiler_defs.h>
+#include <Si1000_defs.h>
 
 // GPIO definitions (not exported)
 SBIT(LED_RED,	   SFR_P2, 0);
@@ -90,4 +91,4 @@ SBIT(IRQ,  SFR_P0, 7);			// Per HRF demo code & schematic
 SBIT(NSS1, SFR_P1, 4);			// SI100x Internal Connection
 SBIT(SDN,  SFR_P2, 6);			// XXX not actually the case on the RFM50... HRF set it this way though
 
-#endif // _BOARD_RF50_H
+#endif // _BOARD_RF50E_H

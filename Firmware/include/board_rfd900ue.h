@@ -28,7 +28,7 @@
 //
 //
 ///
-/// @file	board_rfd900u.h
+/// @file	board_rfd900ue.h
 ///
 /// Board-specific definitions and documentation for the RFD900U,
 /// Version 1.2 onwards.
@@ -59,20 +59,21 @@
 /// it is a flow control input to the SiK radio firmware.
 
 
-#ifndef _BOARD_RFD900U
-#define _BOARD_RFD900U
-
-#include <compiler_defs.h>
-#include <Si1020_defs.h>
+#ifndef _BOARD_RFD900UE
+#define _BOARD_RFD900UE
 
 // Ensure that the BoardID has the upper most bit set
 // This tells the tool chain we are dealing with a CPU_SI1030 device
 #define BOARD_ID	 0x80 | 0x01
 #define BOARD_NAME	"RFD900U"
 #define CPU_SI1030
+#define INCLUDE_AES
 
 #define BOARD_MINTXPOWER 0		// Minimum transmit power level
 #define BOARD_MAXTXPOWER 20		// Maximum transmit power level
+
+#include <compiler_defs.h>
+#include <Si1020_defs.h>
 
 //#define WATCH_DOG_ENABLE
 
@@ -133,4 +134,4 @@ SBIT(PIN_ENABLE,   SFR_P0, 3);
 SBIT(IRQ,  SFR_P0, 1);                // Connection within RFD900 module, P0.1 is connected to nIRQ
 SBIT(NSS1, SFR_P2, 3);                // SI1020 Internal Connection
 
-#endif // _BOARD_RFD900U
+#endif // _BOARD_RFD900UE

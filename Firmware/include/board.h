@@ -94,26 +94,24 @@
 #ifndef _BOARD_H_
 #define _BOARD_H_
 
-#if   defined(BOARD_rf50)
-# include "board_rf50.h"
-#elif defined(BOARD_hm_trp)
-# include "board_hm_trp.h"
-#elif defined(BOARD_rfd900)
-# include "board_rfd900.h"
-#elif defined(BOARD_rfd900a)
-# include "board_rfd900a.h"
-#elif defined(BOARD_rfd900u)
-# include "board_rfd900u.h"
-#elif defined(BOARD_rfd900p)
-# include "board_rfd900p.h"
+#if   defined(BOARD_rf50e)
+#define BOARD_rf50
+# include "board_rf50e.h"
+#elif defined(BOARD_hm_trpe)
+#define BOARD_hm_trp
+# include "board_hm_trpe.h"
+#elif defined(BOARD_rfd900e)
+#define BOARD_rfd900
+# include "board_rfd900e.h"
+#elif defined(BOARD_rfd900ae)
+#define BOARD_rfd900a
+# include "board_rfd900ae.h"
 #elif defined(BOARD_rfd900pe)
-#define INCLUDE_AES
 #define BOARD_rfd900p
-# include "board_rfd900p.h"
+# include "board_rfd900pe.h"
 #elif defined(BOARD_rfd900ue)
-#define INCLUDE_AES
 #define BOARD_rfd900u
-# include "board_rfd900u.h"
+# include "board_rfd900ue.h"
 #else
 # error Must define a BOARD_ value before including this file.
 #endif

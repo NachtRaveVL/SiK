@@ -32,10 +32,9 @@
 // Includes
 //=============================================================================
 #include <compiler_defs.h>
-#include <Si1020_defs.h>
-#include "GenerateDecryptionKey.h"
 #include "AES_defs.h"
 #include "DMA_defs.h"
+#include "GenerateDecryptionKey.h"
 //=============================================================================
 // Function Prototypes
 //=============================================================================
