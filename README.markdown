@@ -101,7 +101,8 @@ Developer:
 Yeah, dealing with these things is a real PITA. Here are some tricks:
 
  - Your Window's driver isn't set to use 57600 baud rate. Fix that through Device Manager via System Settings and try again (no, seriously, this is required, as you may not be able to enter command mode for baud rates under ~19kb because it thinks you're in data-only rx/tx mode).
- - Your Window's drivers aren't correct, and it's causing connection problems. Try installing the SiLabs [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) and try again.
+ - Your Window's drivers aren't correct, and it's causing connection problems. Try installing the SiLabs [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers), or the [FTDI D2XX VCP Drivers](http://www.ftdichip.com/Drivers/VCP.htm), and try again.
+   - Alternatively, try a different revision of the driver, via Update Driver in Device Manager (using "Browse my computer for drivers" -> "Let me pick from a list of available drivers"), and try again (side note: sometimes an older driver revision will work over the newer one).
  - Make sure the COM port is 57600 baud, 8 data bits, 1 stop bit, no parity, turn off all flow control (RTS/CTS, DTR/DTS, Xon/Xoff, etc), and disconnect any flow control wires (as those are used on some chipsets to force it into bootloader mode).
    - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: stty -F /dev/YOUR_TERMINAL_DEVICE 57600 (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
  - If your LED is solid red, and powercycling it doesn't change that, it may be that you tried installing the wrong firmware on it, it's either stuck in programming mode or error'ed out (or maybe these experimental firmwares just don't even work), or it's bricked.
