@@ -17,23 +17,23 @@ The original SiK radio firmwares maintained by ArduPilot, etc., do not enable AE
 This is interesting because the original RX/TX buffer sizes were as follows:
 
  - Si1000
-  - RxBufferSize: 1850 bytes
-  - TxBufferSize: 645 bytes
+   - RxBufferSize: 1850 bytes
+   - TxBufferSize: 645 bytes
  - Si102x/3x: 
-  - RxBufferSize: 1024 bytes
-  - TxBufferSize: 1024 bytes
-  - EncryptionRingSize: 1020 bytes
+   - RxBufferSize: 1024 bytes
+   - TxBufferSize: 1024 bytes
+   - EncryptionRingSize: 1020 bytes
 
 This library thus resizes these to the following, to both maintain VRAM limits as well as enable AES encryption:
 
  - Si1000
-  - RxBufferSize: 1092 bytes
-  - TxBufferSize: 512 bytes
-  - EncryptionRingSize: 680 bytes
+   - RxBufferSize: 1092 bytes
+   - TxBufferSize: 512 bytes
+   - EncryptionRingSize: 680 bytes
  - Si102x/3x: 
-  - RxBufferSize: 2048 bytes
-  - TxBufferSize: 2048 bytes
-  - EncryptionRingSize: 1020 bytes
+   - RxBufferSize: 2048 bytes
+   - TxBufferSize: 2048 bytes
+   - EncryptionRingSize: 1020 bytes
 
 ## Does This Work?
 
@@ -51,23 +51,23 @@ http://copter.ardupilot.com/wiki/common-optional-hardware/common-telemetry-landi
 Currently, it supports the following boards:
 
  - HopeRF HM-TRP
-  - supporting operational frequencies (MHz): 433 470 868 915
-  - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
+   - supporting operational frequencies (MHz): 433 470 868 915
+   - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
  - HopeRF RF50-DEMO
-  - supporting operational frequencies (MHz): 433 470 868 915
-  - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
+   - supporting operational frequencies (MHz): 433 470 868 915
+   - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
  - RFD900
-  - supporting operational frequencies (MHz): 915
-  - supporting transmit power levels (dBm): 17, 20, 27, 29, 30
+   - supporting operational frequencies (MHz): 915
+   - supporting transmit power levels (dBm): 17, 20, 27, 29, 30
  - RFD900a
-  - supporting operational frequencies (MHz): 915
-  - supporting transmit power levels (dBm): ~ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30
+   - supporting operational frequencies (MHz): 915
+   - supporting transmit power levels (dBm): ~ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30
  - RFD900p
-  - supporting operational frequencies (MHz): 915 868
-  - supporting transmit power levels (dBm): ~ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30
+   - supporting operational frequencies (MHz): 915 868
+   - supporting transmit power levels (dBm): ~ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30
  - RFD900u
-  - supporting operational frequencies (MHz): 915 868
-  - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
+   - supporting operational frequencies (MHz): 915 868
+   - supporting transmit power levels (dBm): 1, 2, 5, 8, 11, 14, 17, 20
 
 Currently the firmware components include:
 
@@ -87,14 +87,14 @@ Optional:
 
  - Python to run the command-line firmware updater.
  - [Mono](http://www.mono-project.com/) to build and run the GUI firmware updater.
-  - psst: Or use [SiK Radio Config Tool](http://vps.oborne.me/3drradioconfig.zip) or [Mission Planner](http://ardupilot.org/planner/docs/common-install-mission-planner.html).
+   - psst: Or use [SiK Radio Config Tool](http://vps.oborne.me/3drradioconfig.zip) or [Mission Planner](http://ardupilot.org/planner/docs/common-install-mission-planner.html).
 
 Developer:
 
  - [SDCC](http://sdcc.sourceforge.net/), version 3.1.0 or later.
-  - psst: sudo apt-get install sdcc automake
+   - psst: sudo apt-get install sdcc automake
  - [EC2Tools](http://github.com/paragonRobotics/ec2-new)
-  - psst: sudo apt-get install gcc g++ autoconf automake python2.4 libreadline-dev libboost-regex-dev libusb-0.1 libusb-dev 
+   - psst: sudo apt-get install gcc g++ autoconf automake python2.4 libreadline-dev libboost-regex-dev libusb-0.1 libusb-dev 
 
 ## My SiK Radio Won't Connect For Programming!
 
@@ -103,7 +103,7 @@ Yeah, dealing with these things is a real PITA. Here are some tricks:
  - Your Window's driver isn't set to use 57600 baud rate. Fix that through Device Manager via System Settings and try again (no, seriously, this is required, as you may not be able to enter command mode for baud rates under ~19kb because it thinks you're in data-only rx/tx mode).
  - Your Window's drivers aren't correct, and it's causing connection problems. Try installing the SiLabs [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) and try again.
  - Make sure the COM port is 57600 baud, 8 data bits, 1 stop bit, no parity, turn off all flow control (RTS/CTS, DTR/DTS, Xon/Xoff, etc), and disconnect any flow control wires (as those are used on some chipsets to force it into bootloader mode).
-  - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: stty -F /dev/YOUR_TERMINAL_DEVICE 57600 (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
+   - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: stty -F /dev/YOUR_TERMINAL_DEVICE 57600 (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
  - If your LED is solid red, and powercycling it doesn't change that, it may be that you tried installing the wrong firmware on it, it's either stuck in programming mode or error'ed out (or maybe these experimental firmwares just don't even work), or it's bricked.
 
 ## Building Things
