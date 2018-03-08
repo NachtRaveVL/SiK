@@ -81,7 +81,7 @@ See the user documentation above for a list of current firmware features
  - A Mac OS X or Linux system for building.  Mac users will need the Developer Tools (Xcode) installed.
  - At least two Si1000 - Si102x/3x - based radio devices (just one radio by itself is not very useful).
  - A [SiLabs USB debug adapter](http://www.silabs.com/products/mcu/Pages/USBDebug.aspx).
-  - psst: Or just grab a [FTDI programmer](https://www.amazon.com/s/?field-keywords=FTDI), such as the [Sparkfun FTDI Basic Breakout](https://www.amazon.com/SparkFun-DEV-09716-FTDI-Basic-Breakout/dp/B0068QKQEA/).
+   - psst: Or just grab a [FTDI programmer](https://www.amazon.com/s/?field-keywords=FTDI), such as the [Sparkfun FTDI Basic Breakout](https://www.amazon.com/SparkFun-DEV-09716-FTDI-Basic-Breakout/dp/B0068QKQEA/).
 
 Optional:
 
