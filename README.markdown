@@ -92,9 +92,9 @@ Optional:
 Developer:
 
  - [SDCC](http://sdcc.sourceforge.net/), version 3.1.0 or later.
-   - psst: sudo apt-get install sdcc automake
+   - psst: `sudo apt-get install sdcc automake`
  - [EC2Tools](http://github.com/paragonRobotics/ec2-new)
-   - psst: sudo apt-get install gcc g++ autoconf automake python2.4 libreadline-dev libboost-regex-dev libusb-0.1 libusb-dev 
+   - psst: `sudo apt-get install gcc g++ autoconf automake python2.4 libreadline-dev libboost-regex-dev libusb-0.1 libusb-dev`
 
 ## My SiK Radio Won't Connect For Programming!
 
