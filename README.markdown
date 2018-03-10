@@ -54,7 +54,7 @@ Addition configuration guide can also be found here:
 
 http://ardupilot.org/copter/docs/common-configuring-a-telemetry-radio-using-mission-planner.html
 
-and more advanced configuration here:
+And more advanced configuration here:
 
 http://ardupilot.org/copter/docs/common-3dr-radio-advanced-configuration-and-technical-information.html
 
@@ -96,13 +96,13 @@ See the user documentation above for a list of current firmware features
 
 ## What You Will Need
 
- - A Mac OS X or Linux system for building.  Mac users will need the Developer Tools (Xcode) installed.
- - At least two Si1000 - Si102x/3x - based radio devices (just one radio by itself is not very useful).
+  - At least two Si1000 - Si102x/3x - based radio devices (just one radio by itself is not very useful).
  - A [SiLabs USB debug adapter](http://www.silabs.com/products/mcu/Pages/USBDebug.aspx).
    - psst: Or just grab a [FTDI programmer](https://www.amazon.com/s/?field-keywords=FTDI), such as the [Sparkfun FTDI Basic Breakout](https://www.amazon.com/SparkFun-DEV-09716-FTDI-Basic-Breakout/dp/B0068QKQEA/).
 
 Optional:
 
+ - A Mac OS X or Linux system (or [Windows Bash](https://docs.microsoft.com/en-us/windows/wsl/install-win10)) for building.  Mac users will need the Developer Tools (Xcode) installed.
  - Python to run the command-line firmware updater.
  - [Mono](http://www.mono-project.com/) to build and run the GUI firmware updater.
    - psst: Or use [SiK Radio Config Tool](http://vps.oborne.me/3drradioconfig.zip) or [Mission Planner](http://ardupilot.org/planner/docs/common-install-mission-planner.html).
