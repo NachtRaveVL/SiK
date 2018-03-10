@@ -53,7 +53,7 @@ http://ardupilot.org/copter/docs/common-sik-telemetry-radio.html
 Addition configuration guide can also be found here:
 
 http://ardupilot.org/copter/docs/common-configuring-a-telemetry-radio-using-mission-planner.html
-|
+
 and more advanced configuration here:
 
 http://ardupilot.org/copter/docs/common-3dr-radio-advanced-configuration-and-technical-information.html
