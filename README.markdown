@@ -27,7 +27,7 @@ This is interesting because the original RX/TX buffer sizes were as follows:
 This library thus resizes these to the following, to both maintain VRAM limits as well as enable AES encryption:
 
  - Si1000
-   - RxBufferSize: 1092 bytes
+   - RxBufferSize: 1024 bytes
    - TxBufferSize: 512 bytes
    - EncryptionRingSize: 680 bytes
  - Si102x/3x: 
@@ -37,7 +37,13 @@ This library thus resizes these to the following, to both maintain VRAM limits a
 
 ## Does This Work?
 
-I dunno, you tell me. Feedback welcomed.
+I dunno, you tell me! Feedback welcomed, but be warned this is all highly experimental!
+
+#### What if my radio stops working?
+
+If your radio starts up with a single quick blink of the red LED (and not any LED lights or being able to communicate thus after) then you're going to have to manually put your device back into bootloader mode, to load an original stable Firmware, by manually shorting out GND to the CTS pin during power up.
+
+On your ground station radio, if it's USB and doing this, you'll need to short the CTS pin on the tiny little main chip. Those CTS pins (well, it's general location on that tiny little chip) are marked on this image: ![CTS Clear Pin](3dr-cts-pin.png)
 
 ## Documentation
 For user documentation please see this site:
