@@ -39,12 +39,6 @@ This library thus resizes these to the following, to both maintain VRAM limits a
 
 I dunno, you tell me! Feedback welcomed, but be warned this is all highly experimental!
 
-#### What if my radio stops working?
-
-If your radio starts up with a single quick blink of the red LED (and not any LED lights or being able to communicate thus after) then you're going to have to manually put your device back into bootloader mode, to load an original stable Firmware, by manually shorting out GND to the CTS pin during power up.
-
-On your ground station radio, if it's USB and doing this, you'll need to short the CTS pin on the tiny little main chip. Those CTS pins (well, it's general location on that tiny little chip) are marked on this image: ![CTS Clear Pin](3dr-cts-pin.png)
-
 ## Documentation
 For user documentation please see this site:
 
@@ -52,7 +46,19 @@ http://ardupilot.org/copter/docs/common-sik-telemetry-radio.html
 
 Addition configuration guide can also be found here:
 
-http://copter.ardupilot.com/wiki/common-optional-hardware/common-telemetry-landingpage/common-3dr-radio-advanced-configuration-and-technical-information/
+http://ardupilot.org/copter/docs/common-configuring-a-telemetry-radio-using-mission-planner.html
+|
+and more advanced configuration here:
+
+http://ardupilot.org/copter/docs/common-3dr-radio-advanced-configuration-and-technical-information.html
+
+Additionally, here is the data sheet:
+
+https://www.silabs.com/documents/public/data-sheets/Si1000.pdf
+
+And if you want a SHA-256 hash generator to generate a hexadecimal hash value from a pre-shared key to fill in that AES key:
+
+https://passwordsgenerator.net/sha256-hash-generator/
 
 Currently, it supports the following boards:
 
@@ -106,12 +112,19 @@ Developer:
 
 Yeah, dealing with these things is a real PITA. Here are some tricks:
 
- - Your Window's driver isn't set to use 57600 baud rate. Fix that through Device Manager via System Settings and try again (no, seriously, this is required, as you may not be able to enter command mode for baud rates under ~19kb because it thinks you're in data-only rx/tx mode).
- - Your Window's drivers aren't correct, and it's causing connection problems. Try installing the SiLabs [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers), or the [FTDI D2XX VCP Drivers](http://www.ftdichip.com/Drivers/VCP.htm), and try again.
-   - Alternatively, try a different revision of the driver, via Update Driver in Device Manager (using "Browse my computer for drivers" -> "Let me pick from a list of available drivers"), and try again (side note: sometimes an older driver revision will work over the newer one).
+ - Your Window's driver isn't set to use 57600 baud rate. Fix that through Device Manager via System Settings and try again (no, seriously, this is required, as you may not be able to enter command mode for baud rates under 19~20kb because it thinks you're in data-only rx/tx mode).
+ - Your Window's drivers aren't correct, and it's causing connection problems. Try installing the SiLabs [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers), or the [FTDI D2XX VCP Drivers](http://www.ftdichip.com/Drivers/VCP.htm), ensuring that port device is using said driver, and try again.
+   - You can set the specific driver (including manufacturer and version) via Update Driver in Device Manager (right click the port, click update driver, select "Browse my computer for drivers" then "Let me pick from a list of available drivers").
+     - Side note: sometimes an older driver revision will work over the newer one - for example, I typically have to use v6.7.4.261 of the SiLabs driver.
  - Make sure the COM port is 57600 baud, 8 data bits, 1 stop bit, no parity, turn off all flow control (RTS/CTS, DTR/DTS, Xon/Xoff, etc), and disconnect any flow control wires (as those are used on some chipsets to force it into bootloader mode).
-   - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: stty -F /dev/YOUR_TERMINAL_DEVICE 57600 (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
+   - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: `stty -F /dev/{usb/tty_serial_device_here} 57600` (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
  - If your LED is solid red, and powercycling it doesn't change that, it may be that you tried installing the wrong firmware on it, it's either stuck in programming mode or error'ed out (or maybe these experimental firmwares just don't even work), or it's bricked.
+
+ ### What if my radio stops working?
+
+If your radio starts up with a single quick blink of the red LED (and not any LED lights or being able to communicate thus after) then it's crashing on startup, and you're going to have to manually put your device back into bootloader mode, to load an original stable Firmware, by manually shorting out GND to the CTS pin during power up.
+
+On your air radio, this isn't usually too difficult, but on your ground station radio, if it's USB and doing this, you'll need to short the CTS pin on the tiny little main chip. The CTS pins (well, in addition to the general location on that tiny little chip) are marked on this image: ![CTS Clear Pin](3dr-cts-pin.png)
 
 ## Building Things
 
