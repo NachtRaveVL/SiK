@@ -56,7 +56,7 @@
     static __pdata uint16_t encrypt_buff_end = 500; // End our quick buffer clear
 #else
     #ifdef INCLUDE_AES
-        #define RX_BUFF_MAX 1092
+        #define RX_BUFF_MAX 1024
         #define TX_BUFF_MAX 512
         #define ENCRYPT_BUFF_MAX 17*40 // 16 bit encrypted packets plus one for size (680)
         static __pdata uint16_t encrypt_buff_start = 300; // Start decrypting more to clear buffer
