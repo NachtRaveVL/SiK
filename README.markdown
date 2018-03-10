@@ -124,7 +124,9 @@ Yeah, dealing with these things is a real PITA. Here are some tricks:
 
 If your radio starts up with a single quick blink of the red LED (and not any LED lights or being able to communicate thus after) then it's crashing on startup, and you're going to have to manually put your device back into bootloader mode, to load an original stable Firmware, by manually shorting out GND to the CTS pin during power up.
 
-On your air radio, this isn't usually too difficult, but on your ground station radio, if it's USB and doing this, you'll need to short the CTS pin on the tiny little main chip. The CTS pins (well, in addition to the general location on that tiny little chip) are marked on this image: ![CTS Clear Pin](3dr-cts-pin.png)
+On your air radio, this isn't usually too difficult, but on your ground station radio, if it's USB and doing this, you'll need to short the CTS pin on the tiny little main chip. The CTS pins (and the general location of such on that tiny little chip) are marked on this image:
+
+![CTS Clear Pin](3dr-cts-pin.png)
 
 ## Building Things
 
