@@ -102,13 +102,14 @@ See the user documentation above for a list of current firmware features
 
 Optional:
 
- - A Mac OS X or Linux system (or [Windows Bash](https://docs.microsoft.com/en-us/windows/wsl/install-win10)) for building.  Mac users will need the Developer Tools (Xcode) installed.
- - Python to run the command-line firmware updater.
+  - Python to run the command-line firmware updater.
  - [Mono](http://www.mono-project.com/) to build and run the GUI firmware updater.
    - psst: Or use [SiK Radio Config Tool](http://vps.oborne.me/3drradioconfig.zip) or [Mission Planner](http://ardupilot.org/planner/docs/common-install-mission-planner.html).
 
 Developer:
 
+ - A Mac OS X or Linux system (or [Windows Bash](https://docs.microsoft.com/en-us/windows/wsl/install-win10)) for building.
+    - Mac users will need the [Developer Tools (Xcode)](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) installed.
  - [SDCC](http://sdcc.sourceforge.net/), version 3.1.0 or later.
    - psst: `sudo apt-get install sdcc automake`
  - [EC2Tools](http://github.com/paragonRobotics/ec2-new)
@@ -126,7 +127,7 @@ Yeah, dealing with these things is a real PITA. Here are some tricks:
    - On Linux, you can try directly setting the /dev/{ttyS#/usb#/etc} device with: `stty -F /dev/{usb/tty_serial_device_here} 57600` (side note: in Window's Bash, /dev/ttyS# corresponds to COM port #).
  - If your LED is solid red, and powercycling it doesn't change that, it may be that you tried installing the wrong firmware on it, it's either stuck in programming mode or error'ed out (or maybe these experimental firmwares just don't even work), or it's bricked.
 
- ### What if my radio stops working?
+ ### What if my radio stops working / no LED lights?
 
 If your radio starts up with a single quick blink of the red LED (and not any LED lights or being able to communicate thus after) then it's crashing on startup, and you're going to have to manually put your device back into bootloader mode, to load an original stable Firmware, by manually shorting out GND to the CTS pin during power up.
 
