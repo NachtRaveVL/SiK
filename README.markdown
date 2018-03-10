@@ -37,7 +37,7 @@ This library thus resizes these to the following, to both maintain VRAM limits a
    - TxBufferSize: 512 bytes
    - EncryptionRingSize: 680 bytes
  - Si102x/3x: 
-   - RxBufferSize: 2048 bytes
+   - RxBufferSize: 3072 bytes
    - TxBufferSize: 2048 bytes
    - EncryptionRingSize: 1020 bytes
 

@@ -49,7 +49,7 @@
 // 8 TDM time slots
 //
 #ifdef CPU_SI1030
-    #define RX_BUFF_MAX 2048
+    #define RX_BUFF_MAX 3072
     #define TX_BUFF_MAX 2048
     #define ENCRYPT_BUFF_MAX 17*60 // 16 bit encrypted packets plus one for size (1020)
     static __pdata uint16_t encrypt_buff_start = 400; // Start decrypting more to clear buffer
