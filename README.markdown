@@ -9,7 +9,13 @@ Here's the current built binaries. Use at your own risk:
 
  - https://github.com/NachtRaveVL/SiK/tree/master/Firmware/dst
 
-Which one should you download? Depends on your actual chipset. The HopeRF versions are the generic, cheap versions (usually Chinese in origin), while the RFD versions are the 3DRobotics versions. You can always break open the plastic to see what is printed on the board itself, or just try the various ones and see which one works (side note: You can also try QGroundControl, which attempts to detect the type you're using during firmware update).
+### Which one should I download?
+
+Depends on your actual chipset. The HopeRF versions are the generic, cheap versions (usually Chinese in origin), while the RFD versions are the bulky 3DRobotics versions.
+
+You can always break open the plastic to see what is printed on the back of the board itself, or just observe what board ID your device is sending back.
+
+You can also try [QGroundControl](http://qgroundcontrol.com), which attempts to detect the type you're using during firmware update, or look at the console update during Firmware update using [SiK Radio Config Tool](http://vps.oborne.me/3drradioconfig.zip).
 
 ## Motivation
 The original SiK radio firmwares maintained by ArduPilot, etc., do not enable AES encryption on Si1000 chipsets, only on Si102x/3x chipsets, and only for the modules with e suffixed to the name (i.e. rfd900pe, rfd900ue). Why? Well, probably because the Si1000 chips only have 4096 of VRAM, while the Si102x/3x chips have 8096.
