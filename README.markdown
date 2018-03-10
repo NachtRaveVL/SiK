@@ -173,7 +173,7 @@ Start at the [Si1000 product page](http://www.silabs.com/products/wireless/wirel
 
 ## Reporting Problems
 
-Please use the GitHub issues link at the top of the [project page](http://github.com/tridge/SiK) to report any problems with, or to make suggestions about SiK.  I encourage you to fork the project and make whatever use you may of it.
+Please use the GitHub issues link at the top of the [project page](http://github.com/NachtRaveVL/SiK) to report any problems with, or to make suggestions about SiK.  I encourage you to fork the project and make whatever use you may of it.
 
 ## What does SiK mean?
 
